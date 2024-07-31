@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {auth} from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GithubAuthProvider, GoogleAuthProvider, signInWithRedirect, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 const NavBar = () => {
     const [user] = useAuthState(auth);

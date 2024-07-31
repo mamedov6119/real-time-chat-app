@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleAuthProvider, signInWithRedirect, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase";
 
 const Welcome = () => {
