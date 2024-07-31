@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {auth} from "../../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithRedirect, signInWithPopup } from "firebase/auth";
 
 const NavBar = () => {
     const [user] = useAuthState(auth);
@@ -12,6 +12,16 @@ const NavBar = () => {
     const signOut = () => {
         auth.signOut();
     };
+
+    const githubSignIn = () => {
+        const provider = new GithubAuthProvider();
+        signInWithPopup(auth, provider);
+    };
+
+    const githubSignOut = () => {
+        auth.signOut();
+    };
+
     return (
         <nav className="nav-bar">
             <h1>React Chat</h1>
@@ -20,7 +30,7 @@ const NavBar = () => {
                     Sign Out
                 </button>
             ) : (
-                <button className="sign-in" onClick={googleSignIn}> 
+                <button className="sign-in" onClick={githubSignIn}> 
                     Sign In with Google
                 </button>
             )}

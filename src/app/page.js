@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="App">
       <NavBar />
-      {!user ? <Welcome /> : <Chat />}
+      {!user ? <Welcome /> : <><Chat /></>}
     </div>
   );
 }
