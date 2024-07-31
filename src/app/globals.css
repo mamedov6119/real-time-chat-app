@@ -3,3 +3,89 @@
 @tailwind utilities;
 
 
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* NavBar Styles */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0070f3;
+    color: #fff;
+}
+
+.nav-bar h1 {
+    font-size: 1.5rem;
+}
+
+.nav-bar .sign-in img, .nav-bar .sign-out {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-bar .sign-in img:hover, .nav-bar .sign-out:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+/* Welcome Styles */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.welcome h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome img {
+    margin-bottom: 1rem;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome .sign-in img {
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.welcome .sign-in img:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
