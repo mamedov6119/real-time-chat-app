@@ -42,5 +42,3 @@ next-env.d.ts
 # admin file
 admin.json
 
-#firebase
-firebase.js
