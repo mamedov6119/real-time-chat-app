@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node server.js",
+    "lint": "next lint",
+    "postinstall": "next build"
   },
   "dependencies": {
     "axios": "^1.7.2",

@@ -2,7 +2,9 @@ import { createServer } from "node:http";
 import next from "next";
 import { Server } from "socket.io";
 import express from "express";
+import { initializeApp, cert } from 'firebase-admin/app';
 import { getFirestore, Timestamp } from 'firebase-admin/firestore';
+import serviceAccount from './admin.json' assert {type: "json"};
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -11,7 +13,12 @@ const handle = app.getRequestHandler();
 const hostname = "localhost";
 const port = process.env.PORT || 5000;
 
-// const db = getFirestore();
+// Initialize Firebase Admin
+initializeApp({
+  credential: cert(serviceAccount)
+});
+
+const db = getFirestore();
 
 app.prepare().then(() => {
   const expressApp = express();
@@ -38,7 +45,7 @@ app.prepare().then(() => {
           message: msg.message,
           createdAt: Timestamp.now(),
         };
-        // const docRef = await db.collection('messages').add(newMessage);
+        const docRef = await db.collection('messages').add(newMessage);
         
         // Add Firestore document ID to the message
         newMessage.id = docRef.id;
